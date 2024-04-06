@@ -7,7 +7,8 @@ const  express=require('express');
  const Router= express.Router();
  Router.route('/').post(
     (req,res)=>{
-        const{email,message}=req.body
+      try {
+    const{email,message}=req.body
        const transporter=nodemailer.createTransport({
           service:'gmail',
           auth:{
@@ -33,5 +34,11 @@ const  express=require('express');
              }
           })
         }
+         
+       catch (error) {
+         console.log(error.message)
+      }
+   }
+        
  )
  module.exports=Router
