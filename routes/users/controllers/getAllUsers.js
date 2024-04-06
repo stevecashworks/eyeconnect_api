@@ -9,4 +9,4 @@ const getAllUsers=async(req,res)=>{
         return res.status(500).json({success:false, result:error.message})
     }
 }
-module.exports=allUsers
+module.exports=getAllUsers

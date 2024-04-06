@@ -15,8 +15,7 @@ app.use("/sendmail", router);
 app.use("/users", userRouter);
 app.get("/", async (req, res) => {
   try {
-    const events = await eventSchema.find();
-    res.status(201).json(events);
+    res.status(201).send("server is working");
   } catch (err) {
     console.log(err);
   }
