@@ -1,7 +1,7 @@
 const userModel = require("../../../schema.js");
 const login = async (req, res, next) => {
   try {
-    const { email, userName, password } = req.body;
+    const { email, password } = req.body;
     const thisUser = await userModel.findOne({ email });
     
   
