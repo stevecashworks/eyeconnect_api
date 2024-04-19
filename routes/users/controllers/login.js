@@ -20,11 +20,8 @@ const login = async (req, res, next) => {
           .status(403)
           .json({ success: false, result: "incorrect password" });
       } else {
-        const token = await jwt.sign(
-          { id: thisUser._id },
-          process.env.jwt_pass
-        );
-        return res.status(200).json({ success: true, result: {...thisUser, token} });
+        const token = await jwt.sign({id:thisUser._id}, process.env.jwt_pass)
+        return res.status(200).json({ success: true, result: {...thisUser._doc, token} });
       }
     }
   } catch (error) {
