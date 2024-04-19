@@ -9,5 +9,5 @@ return res.status(200).json({success:true, result:updatedUser})
     return res.status(500).json({success:true,result:error.message})
 }
 }
-// testing to find if this connects
+
 module.exports=editUser

@@ -14,6 +14,16 @@ const mongoose=require('mongoose');
         type:String,
         required:true,
     },
+    prescriptions:{
+            type:[{
+                startDate:Date,
+                endDate:Date,
+                doctor:String,
+                prescription_text:String
+
+            }], 
+            default:[]
+    }
    
 
  })
