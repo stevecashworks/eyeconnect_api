@@ -1,8 +1,7 @@
 const userModel = require("../../../schema.js");
 const jwt = require("jsonwebtoken");
-const {config}=require("dotenv")
-config()
-console.log()
+
+
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
