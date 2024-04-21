@@ -8,7 +8,7 @@ const register=async(req,res)=>{
  try{
      const newUser=await userModel.create(req.body)
      const token=jwt.sign({id:newUser._id},process.env.jwt_pass) 
-return res.status(201).json({success:true,result:{...newUser, token}})
+return res.status(201).json({success:true,result:{...newUser._doc, token}})
  }catch(err){
   return res.status(500).json({success:false, result:err.message})
  }
