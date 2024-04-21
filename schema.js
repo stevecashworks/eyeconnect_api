@@ -29,7 +29,11 @@ const mongoose=require('mongoose');
         type:[
         {
             date:Date,
-            doctor:String
+            doctor:{
+                id:String,
+                name:String,
+                profession:String,
+            }
         }
     ],
     default:[]
