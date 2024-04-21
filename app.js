@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const router = require("./router");
 const userRouter = require("./routes/users/userRoute.js");
+const doctorRoute = require("./routes/doctors/doctorRoute.js");
 require("dotenv").config();
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/sendmail", router);
 app.use("/users", userRouter);
+app.use("/doctors", doctorRoute)
 app.get("/", async (req, res) => {
   try {
     res.status(201).send("server is working");

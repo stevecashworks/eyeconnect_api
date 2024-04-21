@@ -12,4 +12,4 @@ const   DoctorSchema=Schema({
     position:String,
     location:String
 })
-module.exports=model("doctors", DoctorSchema)
+module.exports=model("doctors", DoctorSchema)  
