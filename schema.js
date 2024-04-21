@@ -23,7 +23,17 @@ const mongoose=require('mongoose');
 
             }], 
             default:[]
-    }
+            
+    },
+    appointments:{
+        type:[
+        {
+            date:Date,
+            doctor:String
+        }
+    ],
+    default:[]
+}
    
 
  })
